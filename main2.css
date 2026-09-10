@@ -1,0 +1,139 @@
+:root {
+  --red: #ff3c00;
+  --white: #ffffff;
+  --black: #101010;
+  --soft-red: #ffd6c9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+  background: var(--bg);
+  color: var(--fontColor);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.2), transparent 45%);
+  pointer-events: none;
+}
+
+.card {
+  position: relative;
+  width: min(100%, 520px);
+  padding: 32px 28px 20px;
+  border-radius: 24px;
+  background: var(--cardBg);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(8px);
+  z-index: 1;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+h1 {
+  margin: 0 0 10px;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.1;
+}
+
+#msg {
+  margin: 0 0 18px;
+  color: var(--mutedText);
+  font-size: 1rem;
+}
+
+ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+li {
+  list-style: circle;
+  margin: 10px 0;
+  color: var(--fontColor);
+}
+
+.list {
+  list-style: square;
+}
+
+a {
+  color: var(--linkColor);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+a:hover {
+  border-color: currentColor;
+  transform: translateX(2px);
+}
+
+.light-theme {
+  --bg: linear-gradient(135deg, #ff8c5f 0%, #ffb38a 45%, #ffe0cf 100%);
+  --cardBg: rgba(255, 255, 255, 0.28);
+  --fontColor: #1c120d;
+  --mutedText: #5e3629;
+  --linkColor: #7e220d;
+  --btnBg: #111111;
+  --btnFontColor: #ffffff;
+}
+
+.dark-theme {
+  --bg: linear-gradient(135deg, #0d0d0d 0%, #191919 35%, #2a1a15 100%);
+  --cardBg: rgba(20, 20, 20, 0.8);
+  --fontColor: #ffd8c8;
+  --mutedText: #f6b39b;
+  --linkColor: #ff9d7d;
+  --btnBg: #ffffff;
+  --btnFontColor: #111111;
+}
+
+.btn {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: none;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--btnFontColor);
+  background-color: var(--btnBg);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 2;
+}
+
+.btn:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.22);
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
